@@ -1,0 +1,33 @@
+<div class="row mt-5">
+
+<div class="col">
+
+    <form [formGroup]="translateForm">
+
+        <textarea formControlName="word" class="form-control"></textarea>
+
+        <div class="form-group m-3">
+            <label for="my-select">languages</label>
+            <select formControlName="target" id="my-select" class="form-control" name="">
+                <option  value="{{lang.language}}" *ngFor="let lang of _languages.data.languages">{{lang.language}}</option>
+
+            </select>
+        </div>
+
+         <button class="btn btn-primary" (click)="translate()" >translate</button>
+
+    </form>
+
+</div>
+<div class="col">
+    <h3>resultat</h3>
+
+    <div>
+    <p>
+        {{res_translated}}
+    </p>
+    </div>
+
+</div>
+
+</div>
